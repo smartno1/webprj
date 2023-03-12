@@ -13,17 +13,17 @@ import javax.sql.DataSource;
 // DB 관련 설정 클래스
 @Configuration
 @ComponentScan(basePackages = "com.project.web_prj")
-@PropertySource("classpath:db_info.properties")
+//@PropertySource("classpath:db_info.properties")
 public class DataBaseConfig {
 
-    @Value("${aws.rds_user_name}")
-    private String username;
-
-    @Value("${aws.rds_password}")
-    private String password;
-
-    @Value("${aws.rds_url}")
-    private String url;
+//    @Value("${aws.rds_user_name}")
+//    private String username;
+//
+//    @Value("${aws.rds_password}")
+//    private String password;
+//
+//    @Value("${aws.rds_url}")
+//    private String url;
 
 
 
@@ -33,9 +33,9 @@ public class DataBaseConfig {
 
         HikariConfig config = new HikariConfig();
 
-        config.setUsername(username);
-        config.setPassword(password);
-        config.setJdbcUrl(url);
+        config.setUsername("popo");
+        config.setPassword("alska2580");
+        config.setJdbcUrl("jdbc:mysql://op-dev-database.cjwfzouhty53.ap-northeast-2.rds.amazonaws.com:3306/web");
         config.setDriverClassName("org.mariadb.jdbc.Driver");
 
         return new HikariDataSource(config);
